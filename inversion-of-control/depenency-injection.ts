@@ -16,10 +16,10 @@ class EmailServiceClass {
 }
 
 class NotificationServiceClass {
-    private emailService: EmailService;
+    private emailService: EmailServiceClass;
 
     constructor() {
-        this.emailService = new EmailService();
+        this.emailService = new EmailServiceClass();
     }
 
     sendNotification(message: string): void {
@@ -28,8 +28,8 @@ class NotificationServiceClass {
 }
 
 // Usage
-const notificationServiceObj = new NotificationService();
-notificationService.sendNotification("Hello!");
+const notificationServiceObj = new NotificationServiceClass();
+notificationServiceObj.sendNotification("Hello!");
 
 /* 
 Problems Without DI:

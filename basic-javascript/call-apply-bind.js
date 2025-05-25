@@ -1,4 +1,4 @@
-// 1. Call:The Call() Method calls the function directly and sets this to the first argument passed to the call method 
+// 1. Call(): Calls a function immediately, with a specified this value and arguments provided individually. 
 // and if any other sequences of arguments preceding the first argument are passed to the call method then they are passed as an argument to the function.
 function SetUsername(username) {
     this.username = username;
@@ -35,9 +35,7 @@ console.log(`-------------------------------------------------------------------
 
 
 
-// 2. Apply: The Apply() Method calls the function directly and sets "this" to the first argument passed to the apply method 
-// and if any other arguments is reuired then pass as an argument to the function
-
+// 2. Apply: Works exactly like call(), except it takes arguments as an array.
 const nameObj = {
     name: 'Tony'
 }
@@ -52,8 +50,7 @@ printObj.sayHello(24, 'Pune') // My name is Steve and age is 24
 printObj.sayHello.apply(nameObj, [34, 'Mumbai'])
 console.log(`------------------------------------------------------------------------`);
 
-// Bind: The Bind() Method creates a new function and when that new function is called it set "this" keyword to the first argument which is passed to the bind method, 
-// and if any other sequences of arguments preceding the first argument are passed to the bind method then they are passed as an argument to the new function when the new function is called.
+// Bind: Returns a new function with the specified this value and optional arguments. It does not call the function immediately.
 const car = {
     brand: 'Lamborghini',
 };
@@ -75,3 +72,20 @@ lamboPrintDetail('Diablo VTTT', 222);
 const reventonPrintDetail = printDetail.bind(car, 'Reventon', 221);
 reventonPrintDetail();
 //output: Lamborghini Reventon has a top speed of 221 mph
+
+// Why Use Them?
+// 1. To borrow methods from one object for another.
+
+// 2. To set the this context explicitly.
+
+// Problem Definition:
+// You’re building a reusable logger utility. You want to log messages for different modules, and you want the logger to prefix logs with the module name.
+
+function logMessage(message) {
+    console.log(`[${this.moduleName}] ${message}`);
+}
+const authModeule = logMessage.bind({moduleName: "Authentication"})
+authModeule("Logs from auth Module")
+
+const paymentModul = logMessage.bind({moduleName: "Payment"})
+paymentModul("Logs from Payment Module")

@@ -21,7 +21,8 @@ setTimeout(greet, 2000, 'Nadeem')
 
 //  ---------------------- Problem with callback ---------------------
 // Callback Hell: If you have multiple callback function where each level depends on the result obtain from previous level.
-// As a result, creates nesting of function
+// As a result, creates nesting of function callled callback hell
+
 
 fetchCurrentUser('/api/user', (result) => {
     fetchFollowerByUserId('/api/follower/${id:userId}', (result) => {

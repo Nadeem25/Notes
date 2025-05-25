@@ -5,5 +5,9 @@ function greet(name) {
     console.log(`Hello : ${name}`); 
 }
 
-// setInterval() : function repetedly execute the block of code again and again at particular interval time
+//setInterval() : function repetedly execute the block of code again and again at particular interval time
 //setInterval(function, time, param, param)
+
+// setImmediate(()=> {})
+// used to schedule a callback to run after the current event loop phase
+//It runs the callback as soon as possible on the next cycle of the event loop, after I/O events

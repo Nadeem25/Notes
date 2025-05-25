@@ -1,5 +1,15 @@
-// Prototype: It is an behaviour in javascript that used to access the properties and methods of Objects. 
-// Inherited properties and originally define in the object.
+// Prototype: 
+// In JavaScript, every object has an internal link to another object called its prototype. 
+// When you try to access a property or method on an object, JavaScript will:
+// 1. Look for it on the object itself.
+// 2. If not found, look up the prototype chain until it finds it or reaches the end (null).
+// This is known as prototypal inheritance
+
+// Why We Need Prototypes
+
+// 1. Memory Efficiency: Share methods across all instances without duplicating them.
+// 2. Inheritance: Allow one object to inherit behavior from another.
+// 3. Extensibility: Add features dynamically to all instances of a constructor.
 
 // Function  -----------------|
 //                            |
@@ -67,17 +77,20 @@ channel.trueLength()
 console.log(`=============================================================`);
 
 
-// 4. Problem: I want to add one function which can be access from string, functin and Array
+// 4. Problem: I want to add one function which can be access from string, function and Array
 const myHero = ['thor', 'spiderman']
+
 const heroPower = {
     thor: 'Hammer',
     spiderman: 'Sling'
 }
 const heroName = 'Thor'
+
 function printHeroName() {
     console.log(`Hero name is Thor`);
     
 }
+
 Object.prototype.funInall = function(param) {
     console.log(`Function called from ${param}`);
     

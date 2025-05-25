@@ -1,20 +1,36 @@
-// Closures: It is a function that has access to its own scope, the outer function variables and global variables. 
+// 1. Lexical Scorpe
+// Lexical scope (also called static scope) means that a variable’s scope is determined by its position in the source code. 
+// Inner functions have access to variables defined in their outer (parent) function.
+function outer() {
+    const name = "Anabiya";
+  
+    function inner() {
+      console.log(name); // ✅ inner can access 'name' from outer
+    }
+  
+    inner();
+  }
+  
+  outer(); // Logs: Anabiya
+
+// 2. Closure
+// A closure is formed when a function "remembers" its lexical scope, even when that function is executed outside that lexical scope.
 // Even if the outer function finished the execution. This enable function to remember thier environment
 
-function outer() {
-    let outerVar = 'I am outer function variable'
-    function inner() {
-        console.log(outerVar);
+function makeCounter() {
+    let count = 0;
+  
+    return function () {
+      count++;
+      console.log(count);
+    };
+  }
+  
+  const counter = makeCounter();
+  
+  counter(); // 1
+  counter(); // 2
 
-    }
-    return inner
-}
-const innerFun = outer()
-innerFun()
-
-// 2. Lexical Scope
-// Closure are based on lexical scoping, meaning that function scope is determine by where it is define, not where its executed. 
-// This allow inner function to access outer functions variable.
 
 // 3. Private Variables
 // Closures can encapsulate variables, making them private for specific function. This is commonly used in module pattern

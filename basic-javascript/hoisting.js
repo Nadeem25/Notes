@@ -22,7 +22,8 @@ function fun() { // Declaring
 
 
 // ============= 4. Javascript hoisting with function expression (let) =======================
-funExpression() // output: ReferenceError: Cannot access 'fun' before initialization
+funExpression() // output: ReferenceError: Cannot access 'funExpression' before initialization
+
 let funExpression = () =>{ // Declaring
     let name = 'Mukul Latiyan';
     console.log(name);

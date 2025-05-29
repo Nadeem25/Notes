@@ -1,22 +1,34 @@
-let user = {
-    name: 'John Cena',
-    age: 45,
-    address: {
-        city: 'mumbai'
-    }
+async function printHello() {
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=> resolve("Inside printHello()"), 5000)
+    })
 }
 
-const shallowCopyByAssign = Object.assign({}, user)
-const shallowCopyBySpread = {...user}
+async function printWorld() {
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=> resolve(`Inside printWorld()`), 2000)
+    })
+}
 
-console.log(`Original Object: `, user);
-shallowCopyByAssign.address.city = 'Berlin'
-console.log(`Shallow Copy Object: `, shallowCopyByAssign);
-console.log(`Original Object after changing city name: `, user);
+// async function sequencialExecution() {
+//     const helloResult = await printHello()
+//     console.log(`Sequencial Execution: Result from resolveHello()`, helloResult);
 
-const deepCopy = JSON.parse(JSON.stringify(user))
-deepCopy.name = "Mark Hennery"
-console.log(`After changing the name the original object:`, user);
+//     const worldResult = await printWorld()
+//     console.log(`Sequencial Execution: Result from resolveWorld()`, worldResult);
+// }
+// sequencialExecution()
+
+// async function concurrentExecution() {
+//     const helloResult = printHello()
+//     const worldResult = printWorld()
+//      console.log(`Concurrent Execution: Result from resolveHello()`, await helloResult);
+//     console.log(`Concurrent Execution: Result from resolveWorld()`, await worldResult);
+// }
 
 
+// concurrentExecution()
 
+Promise.all([(async ()=> {console.log('From print hello', await printHello())})(), 
+    (async ()=> {console.log('From print hello', await printWorld())})()
+])

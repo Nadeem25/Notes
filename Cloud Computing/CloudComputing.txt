@@ -1,0 +1,8 @@
+---------- Cloud Computing -------------------
+Definition: It is delivery of IT resource( Server, software, database, storage) over the internet
+
+------------ Serverless Computing -----------------
+1. Definition: You write code and deploy it — the cloud provider automatically handles the server management, scaling, and billing.
+
+--------------- AWS Lambda-----------------------------
+AWS Lambda is a serverless compute service where you run your code without managing servers

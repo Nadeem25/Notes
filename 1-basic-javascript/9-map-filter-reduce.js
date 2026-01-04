@@ -14,8 +14,9 @@ console.log(`Mapped numbers:`, mapNumbers);
 // Reducer: Apply on every item of array and return single value
 const reduceArray = [1,2,3,4,5]
 const initialValue = 0
-const sum = reduceArray.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue
+const sum = reduceArray.reduce((preValue, currentValue) => {
+    console.log(`Pevious Value: ${preValue} and Current Value: ${currentValue}`);
+    return preValue + currentValue
 }, initialValue)
 console.log(`Find sum of array element using reduce: `, sum);
 

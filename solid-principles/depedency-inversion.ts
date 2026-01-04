@@ -1,5 +1,7 @@
 /* 
-"High-level modules should not depend on low-level modules. Both should depend on abstractions."
+"Reduce the tight coupling"
+"High-level modules should depend on abstractions, not concrete implementations"
+
 
 In simpler terms:
 1. Depend on interfaces or abstractions, not on concrete implementations.
@@ -12,26 +14,26 @@ In simpler terms:
 // We have a notification system where a NotificationService sends notifications via email.
 
 class EmailService {
-    sendEmail(message: string): void {
-        console.log(`Sending Email: ${message}`);
+    sendEmail(message:string) {
+        console.log(message);
+        
     }
 }
 
 class NotificationService {
     private emailService: EmailService;
-
     constructor() {
-        this.emailService = new EmailService();
+        this.emailService = new EmailService()
     }
 
-    sendNotification(message: string): void {
-        this.emailService.sendEmail(message);
+    sendNotification(message: string) {
+        this.emailService.sendEmail(message)
     }
 }
 
-// Usage
-const notificationService = new NotificationService();
-notificationService.sendNotification("Hello, Dependency Inversion!");
+const notificationService = new NotificationService()
+notificationService.sendNotification(`Email send by Email Service`)
+
 
 /* 
 # Problems with This Code

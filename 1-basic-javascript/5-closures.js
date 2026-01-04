@@ -1,4 +1,4 @@
-// 1. Lexical Scorpe
+// 1. Lexical Scorpe (Hirarchi)
 // Lexical scope (also called static scope) means that a variable’s scope is determined by its position in the source code. 
 // Inner functions have access to variables defined in their outer (parent) function.
 function outer() {
@@ -26,10 +26,10 @@ function makeCounter() {
     };
   }
   
-  const counter = makeCounter();
+  const countValue = makeCounter();
   
-  counter(); // 1
-  counter(); // 2
+  countValue(); // 1
+  countValue(); // 2
 
 
 // 3. Private Variables
@@ -75,16 +75,32 @@ valueCounter.reset()
 console.log(`Count value: ${valueCounter.count}`);
 
 
-// 4. Closures with setTimeout()
+// 4. Closures with setTimeout() [Let]
 
-function createTimers() {
-    for (let i = 1; i <= 3; i++) {
+// function createTimers() {
+//     for (let i = 1; i <= 3; i++) {
+//         setTimeout(function () {
+//             console.log(`[createTimers] Timer ${i}  Time: ${new Date().getMinutes() + new Date().getSeconds()}`);
+//         }, i * 1000);
+//     }
+// }
+// createTimers();
+
+
+function createTimersWithVar() {
+    for (var i = 1; i <= 3; i++) {
         setTimeout(function () {
-            console.log(`Timer ${i}  Time: ${new Date().getMinutes() + new Date().getSeconds()}`);
+                console.log(`[createTimersWithVar] Timer ${i}  Time: ${new Date().getMinutes() + new Date().getSeconds()}`);
         }, i * 1000);
     }
 }
-createTimers();
+createTimersWithVar();
+
+/**
+ * A closure remembers variables, not values.
+ * var → all closures share the same variable
+ * let → each iteration creates a new variable
+ */
 
 // Benefits of Closures
 // Data Encapsulation: Closures enable data hiding and abstraction.

@@ -12,6 +12,11 @@ console.log(name);
 let name = 'Mukul Latiyan'; // ReferenceError: name is not defined
 
 
+// Note: 
+// 0. Time since when the "let" variable was hoisted and till the intitialization of of "let" variable value
+// 1."Var" Initialized during hoisting with undefine value.But "let" also hoisted but does not intialize with any value (Because it has block scope). This creates something called Temporal Dead Zone (TDZ)
+// 2. Var value store in Global scope and Let and scope store in Script section (seperate memeory space)
+
 // ===================3. JavaScript hoisting with function ======================
 fun(); // Calling before declaration
 

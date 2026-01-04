@@ -36,3 +36,14 @@ Promise.resolve().then(() => {
     process.nextTick(() => console.log(`This is the inner process.nextTick() 4 inside Promise.resolve 2`))
 })
 Promise.resolve().then(() => console.log(`Inside Promise.resolve 3`))
+
+
+// This is process.nextTick() 1
+// This is process.nextTick() 2
+// This is process.nextTick() 3
+// This is the inner process.nextTick() 3 inside process.nextTick() 2
+// Inside Promise.resolve 1
+// Inside Promise.resolve 2
+// Inside Promise.resolve 3
+// This is the inner Promise.resolve() 4 inside Promise.resolve 2
+// This is the inner process.nextTick() 4 inside Promise.resolve 2

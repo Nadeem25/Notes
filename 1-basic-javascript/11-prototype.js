@@ -30,7 +30,7 @@ console.log(`=============================================================`);
 
 
 // 2. Add properties or method in function using prototype
-function cafe(beverageName, beveragePrice) {
+function afe(beverageName, beveragePrice) {
     this.beverageName = beverageName
     this.beveragePrice = beveragePrice
     console.log(`Beverage Name: ${this.beverageName}`); 

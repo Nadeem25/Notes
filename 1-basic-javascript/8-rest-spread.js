@@ -8,7 +8,7 @@ console.log(restOperator(10, 1, 2, 3, 4, 5));
 
 
 // ----------------------- Spread ----------------------------------
-// Taking all the items in an array and spreading them out, essentially unpacking the array so that each item becomes an individual element.
+// Taking all the items from an array and spreading them out, essentially unpacking the array so that each item becomes an individual element.
 function spread(a, b, c) {
     return a + b + c;
 }

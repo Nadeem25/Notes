@@ -1,11 +1,14 @@
 const fs = require('node:fs')
-fs.readFile(__filename, () => {
-    console.log(`fs.readFile() 1`);
-})
-setTimeout(()=> { console.log(`This is setTimeout() 1`)}, 0)
-process.nextTick(() => console.log(`process.nextTick() 1`))
-Promise.resolve().then(() => console.log(`Promise.resolve 1`))
-setImmediate(() => console.log(`setImmediate() 1`))
+
+
+// fs.readFile(__filename, () => {
+//     console.log(`fs.readFile() 1`);
+// })
+// setTimeout(()=> { console.log(`This is setTimeout() 1`)}, 0)
+// process.nextTick(() => console.log(`process.nextTick() 1`))
+// Promise.resolve().then(() => console.log(`Promise.resolve 1`))
+// setImmediate(() => console.log(`setImmediate() 1`))
+
 
 /* 
  -------- Expreriment 3 Inference -------------------
@@ -31,7 +34,7 @@ fs.readFile(__filename, () => {
     console.log(`fs.readFile() 2`);
     setImmediate(() => console.log(`setImmediate() 2`))
 })
-setTimeout(()=> { console.log(`This is setTimeout() 2`)}, 0)
+setTimeout(()=> { console.log(`This is setTimeout() 2`)}, 1000)
 process.nextTick(() => console.log(`process.nextTick() 2`))
 Promise.resolve().then(() => console.log(`Promise.resolve 2`))
 /* Output 

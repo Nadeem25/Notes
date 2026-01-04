@@ -30,15 +30,15 @@ class EagerSingleton {
 console.log(` -------------- Eager loading singleton design pattern ------------`);
 
 const singleton1 = EagerSingleton.getInstance();
-console.log(`singleton1 object`,singleton1); // Logs the timestamp of creation
+console.log(`singleton1 object`, singleton1); // Logs the timestamp of creation
 
 const singleton2 = EagerSingleton.getInstance();
-console.log(`singleton2 object`,singleton2); // Same timestamp as singleton1
+console.log(`singleton2 object`, singleton2); // Same timestamp as singleton1
 
 const singleton3 = new EagerSingleton()
-console.log(`singleton3 object`,singleton3);
+console.log(`singleton3 object`, singleton3);
 
-console.log(singleton1 === singleton2); // true
+console.log(singleton1 === singleton3); // true
 
 
 
@@ -47,7 +47,7 @@ console.log(singleton1 === singleton2); // true
 // This can save resources, especially if the instance is resource-intensive and might not be used.
 class LazySingleton {
     constructor() {
-        if(LazySingleton.instance) {
+        if (LazySingleton.instance) {
             return LazySingleton.instance;
         }
         this.timestamp = new Date()

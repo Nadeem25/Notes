@@ -1,3 +1,19 @@
+// Example 0
+function checkScope() {
+  if(true) {
+    var a = 50;
+    let b = 100
+  }
+  console.log(`Value of a: ${a}`);
+  console.log(`Value of b: ${b}`);
+  
+}
+checkScope()
+// Result: Value of a: 50
+// ReferenceError: b is not defined
+
+
+
 // Example 1
 let num = 90
 function print() {

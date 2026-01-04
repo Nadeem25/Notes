@@ -1,7 +1,7 @@
 /* 
-"A client should not be forced to depend on methods it does not use."
+"Do not force a class to implement method that it does not use"
 
-In simpler terms, interfaces should be designed in such a way that they are specific to the needs of the client. 
+In simpler terms, interfaces should be designed in such a way that they are specific to the needs of the class. 
 Large, generalized interfaces should be broken down into smaller, more focused ones.
 
 

@@ -24,6 +24,8 @@ class VehicleFactory {
 const myVehicle = VehicleFactory.createVehicle('car');
 myVehicle.drive(); // Driving a car
 
+
+
 //  ------------- Abasctract Factory Design Pattern---------------
 
 // 1. Creates families dependent objects without specifying their concrete classes.

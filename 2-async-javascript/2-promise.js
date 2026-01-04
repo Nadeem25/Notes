@@ -36,7 +36,7 @@ const promise4 = new Promise((resolve, reject) => {
 })
 
 // ---------------------------  Promise.all() -------------------------------
-// 1. Promise.all() takes iterable promise as input and return single promise that is an array of the result of the input promises.
+// 1. Promise.all() takes iterable promise as input and return the array of resolved values
 // 2. Return promise will resolve when all the input promises have resolved.
 // 3. It rejects immidiately if any of the input promise gets reject or non promise throw an error, and will reject with the first rejection error.
 
@@ -46,14 +46,20 @@ Promise.all([promise1, promise2, promise3]).then((result) => {
     console.log(`Promise.all() error message:`, errorMessage);
 })
 
+const [promise_1_resolved_value, promise_2_resolved_value, promise_3_resolved_value] =  await Promise.all([promise1, promise2, promise3])
+
 
 // ------------------------- Promise.allSettled() -------------------------------------------- 
 // It waits for all the inputs promises to complete regardless of wheather any one of them is rejected.
-// It return single promise with value and reason or status from that input promises
 // It does not go into catch() block
+
+// It return single promise with value and reason or status from that input promises
 Promise.allSettled([promise1, promise2, promise3]).then((result) => {
     console.log(`Promise.allSettled() result:`, result); 
 })
+
+// It return arrays of input promises result (value, resons, status)
+const [result_1, result_2, result_3] = await Promise.allSettled([promise1, promise2, promise3])
 
 
 // ------------------------- Promise.race() -------------------------------------------------------
@@ -63,4 +69,7 @@ Promise.race([promise3, promise4]).then((result) => {
 }).catch((errorMessage) => {
     console.log(`Promise.race() error message:`, errorMessage);
 })
+
+
+
 
